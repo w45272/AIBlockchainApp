@@ -1,9 +1,14 @@
 import { Title } from "solid-start";
 import Submit from "~/components/Submit";
+import getPassengerButton from "~/components/getPassengerButton";
 import Table from "~/components/Table";
+import { Passenger } from "~/components/Passenger";
+import { createSignal } from "solid-js";
+
+
 
 export default function Home() {
-
+  const [passenger, setPassenger] = createSignal(Passenger);
   return (
     <main>
       <Title>AI Blockchain</Title>
@@ -13,6 +18,8 @@ export default function Home() {
         you have chosen, hit submit and win ETH if you beat the neural network!
       </p>
       <Submit />
+      <Submit />
+      <getPassengerButton />
       <Table />
     </main>
   );
