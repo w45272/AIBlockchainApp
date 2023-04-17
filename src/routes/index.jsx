@@ -1,14 +1,13 @@
 import { Title } from "solid-start";
 import Submit from "~/components/Submit";
-import getPassengerButton from "~/components/getPassengerButton";
+import GetPassengerButton from "~/components/GetPassengerButton";
 import Table from "~/components/Table";
 import { Passenger } from "~/components/Passenger";
 import { createSignal } from "solid-js";
 
-
-
 export default function Home() {
-  const [passenger, setPassenger] = createSignal(Passenger);
+  const [passenger, setPassenger] = createSignal(new Passenger(), {equals: false});
+
   return (
     <main>
       <Title>AI Blockchain</Title>
@@ -19,8 +18,8 @@ export default function Home() {
       </p>
       <Submit />
       <Submit />
-      <getPassengerButton />
-      <Table />
+      <GetPassengerButton passenger={passenger} setPassenger={setPassenger} />
+      <Table passenger = {passenger} />
     </main>
   );
 }
