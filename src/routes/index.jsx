@@ -1,8 +1,12 @@
 import { Title } from "solid-start";
 import Submit from "~/components/Submit";
+import GetPassengerButton from "~/components/GetPassengerButton";
 import Table from "~/components/Table";
+import { Passenger } from "~/components/Passenger";
+import { createSignal } from "solid-js";
 
 export default function Home() {
+  const [passenger, setPassenger] = createSignal(new Passenger(), {equals: false});
 
   return (
     <main>
@@ -13,7 +17,9 @@ export default function Home() {
         you have chosen, hit submit and win ETH if you beat the neural network!
       </p>
       <Submit />
-      <Table />
+      <Submit />
+      <GetPassengerButton passenger={passenger} setPassenger={setPassenger} />
+      <Table passenger = {passenger} />
     </main>
   );
 }

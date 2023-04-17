@@ -1,7 +1,8 @@
-import { createSignal } from "solid-js";
+import { createEffect, createSignal } from "solid-js";
 import "./Table.css";
 
-export default function Table() {
+export default function Table(props) {
+
     return (
         <table class="GeneratedTable">
             <thead>
@@ -18,12 +19,12 @@ export default function Table() {
             <tbody>
                 <tr>
                     <td><input type="checkbox" style="text-align:center;" ng-model="x.dedbuffer"></input></td>
-                    <td>Cell</td>
-                    <td>Cell</td>
-                    <td>Cell</td>
-                    <td>Cell</td>
-                    <td>Cell</td>
-                    <td>Cell</td>
+                    <td>{props.passenger().class}</td>
+                    <td>{props.passenger().sex}</td>
+                    <td>{props.passenger().age}</td>
+                    <td>{props.passenger().ssAboard}</td>
+                    <td>{props.passenger().pcAboard}</td>
+                    <td>{props.passenger().fare}</td>
                 </tr>
                 <tr>
                     <td><input type="checkbox" style="text-align:center;" ng-model="x.dedbuffer"></input></td>
@@ -119,4 +120,5 @@ export default function Table() {
         </table>
     );
 }
+
 
