@@ -10,8 +10,7 @@ export async function GET() {
 function returnPassengerPromise() {
     return new Promise((resolve) => {
         readLineFromFile(generateRandomNumber(1, 887),
-        "public/titanic.csv" 
-        , 
+        "public/titanic.csv", 
         resolve)
     });
 }
