@@ -9,8 +9,9 @@ export async function GET() {
 
 function returnPassengerPromise() {
     return new Promise((resolve) => {
-        readLineFromFile(generateRandomNumber(1, 887), 
-        '/home/wdmingu/Documents/AIBlockhainApp/public/titanic.csv', 
+        readLineFromFile(generateRandomNumber(1, 887),
+        "public/titanic.csv" 
+        , 
         resolve)
     });
 }
