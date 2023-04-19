@@ -6,7 +6,16 @@ import { Passenger } from "~/components/Passenger";
 import { createSignal } from "solid-js";
 
 export default function Home() {
-  const [passenger, setPassenger] = createSignal(new Passenger(), {equals: false});
+  const [passenger0, setPassenger0] = createSignal(new Passenger(), { equals: false });
+  const [passenger1, setPassenger1] = createSignal(new Passenger(), { equals: false });
+  const [passenger2, setPassenger2] = createSignal(new Passenger(), { equals: false });
+  const [passenger3, setPassenger3] = createSignal(new Passenger(), { equals: false });
+  const [passenger4, setPassenger4] = createSignal(new Passenger(), { equals: false });
+  const [passenger5, setPassenger5] = createSignal(new Passenger(), { equals: false });
+  const [passenger6, setPassenger6] = createSignal(new Passenger(), { equals: false });
+  const [passenger7, setPassenger7] = createSignal(new Passenger(), { equals: false });
+  const [passenger8, setPassenger8] = createSignal(new Passenger(), { equals: false });
+  const [passenger9, setPassenger9] = createSignal(new Passenger(), { equals: false });
 
   return (
     <main>
@@ -17,9 +26,28 @@ export default function Home() {
         you have chosen, hit submit and win ETH if you beat the neural network!
       </p>
       <Submit />
-      <Submit />
-      <GetPassengerButton passenger={passenger} setPassenger={setPassenger} />
-      <Table passenger = {passenger} />
+      <GetPassengerButton
+        passenger0={passenger0} setPassenger0={setPassenger0}
+        passenger1={passenger1} setPassenger1={setPassenger1}
+        passenger2={passenger2} setPassenger2={setPassenger2}
+        passenger3={passenger3} setPassenger3={setPassenger3}
+        passenger4={passenger4} setPassenger4={setPassenger4}
+        passenger5={passenger5} setPassenger5={setPassenger5}
+        passenger6={passenger6} setPassenger6={setPassenger6}
+        passenger7={passenger7} setPassenger7={setPassenger7}
+        passenger8={passenger8} setPassenger8={setPassenger8}
+        passenger9={passenger9} setPassenger9={setPassenger9} />
+      <Table
+        passenger0={passenger0}
+        passenger1={passenger1}
+        passenger2={passenger2}
+        passenger3={passenger3}
+        passenger4={passenger4}
+        passenger5={passenger5}
+        passenger6={passenger6}
+        passenger7={passenger7}
+        passenger8={passenger8}
+        passenger9={passenger9} />
     </main>
   );
 }
