@@ -2,10 +2,13 @@ import { Title } from "solid-start";
 import Submit from "~/components/Submit";
 import GetPassengerButton from "~/components/GetPassengerButton";
 import Table from "~/components/Table";
+import Modal from "~/components/Modal";
 import { Passenger } from "~/components/Passenger";
 import { createSignal } from "solid-js";
 
 export default function Home() {
+  const [modalState, setModalState] = createSignal(true);
+
   const [passenger0, setPassenger0] = createSignal(new Passenger(), { equals: false });
   const [passenger1, setPassenger1] = createSignal(new Passenger(), { equals: false });
   const [passenger2, setPassenger2] = createSignal(new Passenger(), { equals: false });
@@ -25,7 +28,8 @@ export default function Home() {
         survived the titanic disater. Look at each data point carefully and choose whether or not you believe that passenger survived. Once
         you have chosen, hit submit and win ETH if you beat the neural network!
       </p>
-      <Submit />
+      <Modal modalState={modalState} setModalState={setModalState}/>
+      <Submit modalState={modalState} setModalState={setModalState} />
       <GetPassengerButton
         passenger0={passenger0} setPassenger0={setPassenger0}
         passenger1={passenger1} setPassenger1={setPassenger1}
