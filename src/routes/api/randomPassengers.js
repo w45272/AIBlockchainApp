@@ -1,9 +1,9 @@
 import fs from 'node:fs';
 import readline from 'node:readline';
+import CurrentPassengers from './CurrentPassengers';
 
 export async function GET() {
     let passenger = await returnPassengerPromise();
-    console.log(passenger);
     return new Response(passenger);
 }
 
