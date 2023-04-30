@@ -1,4 +1,4 @@
-export const abi = [
+[
 	{
 		"inputs": [],
 		"name": "AlreadyCommitted",
@@ -7,6 +7,11 @@ export const abi = [
 	{
 		"inputs": [],
 		"name": "AlreadyPaidWager",
+		"type": "error"
+	},
+	{
+		"inputs": [],
+		"name": "AlreadyRevealed",
 		"type": "error"
 	},
 	{
@@ -31,12 +36,12 @@ export const abi = [
 	},
 	{
 		"inputs": [],
-		"name": "MustBeHost",
+		"name": "MustWaitForCommits",
 		"type": "error"
 	},
 	{
 		"inputs": [],
-		"name": "MustWaitForCommits",
+		"name": "MustWaitForReveals",
 		"type": "error"
 	},
 	{
@@ -58,6 +63,30 @@ export const abi = [
 		"inputs": [],
 		"name": "TooMuchValue",
 		"type": "error"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint8",
+				"name": "_a1",
+				"type": "uint8"
+			},
+			{
+				"internalType": "uint8",
+				"name": "_a2",
+				"type": "uint8"
+			}
+		],
+		"name": "answerDistance",
+		"outputs": [
+			{
+				"internalType": "uint8",
+				"name": "",
+				"type": "uint8"
+			}
+		],
+		"stateMutability": "pure",
+		"type": "function"
 	},
 	{
 		"inputs": [
@@ -111,12 +140,25 @@ export const abi = [
 				"type": "uint256"
 			},
 			{
-				"internalType": "uint256",
+				"internalType": "uint8",
 				"name": "_answer",
-				"type": "uint256"
+				"type": "uint8"
 			}
 		],
 		"name": "reveal",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_gameID",
+				"type": "uint256"
+			}
+		],
+		"name": "rewardWinner",
 		"outputs": [],
 		"stateMutability": "nonpayable",
 		"type": "function"
