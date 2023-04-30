@@ -20,6 +20,10 @@ export default function Modal(props) {
       <div class="modal">
         <div class="modal__inner">
           <h2>Welcome!</h2>
+          <img id='catgif' src="https://i.imgur.com/HnrkBwB.gif" alt=""/>
+          <p> In order to play you must wager some ETH? Is this okay?  </p>
+          <button onClick = {() => {props.setModalState(!props.modalState())}}>I Wanna Play!</button>
+
           <p><img src="https://i.imgur.com/HnrkBwB.gif" alt="" />
             In order to play you must wager some ETH? Is this okay?
           </p>

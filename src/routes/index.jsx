@@ -21,6 +21,8 @@ export default function Home() {
   const [passenger9, setPassenger9] = createSignal(new Passenger(), { equals: false });
 
   return (
+    <>
+    <div id='topline'/>
     <main>
       <Title>AI Blockchain</Title>
       <h1>Compete Against a Neural Network</h1>
@@ -53,5 +55,7 @@ export default function Home() {
         passenger8={passenger8}
         passenger9={passenger9} />
     </main>
+    <div id='waterline'/>
+    </>
   );
 }
