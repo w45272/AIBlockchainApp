@@ -5,9 +5,9 @@ export async function GET() {
     let provider = new ethers.JsonRpcProvider();
     const contractAddress = "0x663f3ad617193148711d28f5334ee4ed07016602";
   
-    const deployerPrivateKey = "0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80"
-    var deployerWallet = new ethers.Wallet(deployerPrivateKey, provider);
-    const titanicContract = new ethers.Contract(contractAddress, abi, deployerWallet);
+    const playerPrivateKey = "0x59c6995e998f97a5a0044966f0945389dc9e86dae88c7a8412f4603b6b78690d"
+    var playerWallet = new ethers.Wallet(playerPrivateKey, provider);
+    const titanicContract = new ethers.Contract(contractAddress, abi, playerWallet);
 
     const sendPromise = titanicContract.createGame();
     sendPromise.then((transaction) => {
