@@ -2,7 +2,7 @@ import ethers from 'ethers';
 import { abi } from '../../../public/abi'
 import { APIEvent, json } from "solid-start/api";
 
-export async function POST({ request, params }) {
+export async function GET({ request, params }) {
     // const body = await new Response(event.request.body).json()
     // console.log(body)
 
