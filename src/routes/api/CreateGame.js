@@ -9,10 +9,7 @@ export async function GET() {
     var deployerWallet = new ethers.Wallet(deployerPrivateKey, provider);
     const titanicContract = new ethers.Contract(contractAddress, abi, deployerWallet);
 
-    const sendPromise = titanicContract.createGame();
-    sendPromise.then((transaction) => {
-        console.log(transaction);
-    });
+    const gameID = await titanicContract.createGame();
     
-    return new Response("OK");
+    return new Response(gameID.nonce);
 }

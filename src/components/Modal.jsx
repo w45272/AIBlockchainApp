@@ -7,7 +7,10 @@ export default function Modal(props) {
   let label2Ref;
 
   const handleIWannaPlayButton = () => {
-
+    createGame()
+    payPlayerWager()
+    payNNWager()
+    props.setModalState(!props.modalState())
   }
 
   createEffect(() => {
@@ -23,7 +26,7 @@ export default function Modal(props) {
           <p><img src="https://i.imgur.com/HnrkBwB.gif" alt="" />
             In order to play you must wager some ETH? Is this okay?
           </p>
-          <button onClick={() => { props.setModalState(!props.modalState()) }}>I Wanna Play!</button>
+          <button onClick={handleIWannaPlayButton}>I Wanna Play!</button>
         </div>
       </div>
     </>
@@ -31,14 +34,16 @@ export default function Modal(props) {
 }
 
 async function createGame() {
-  const response = await fetch('http://localhost:3000/api/CreateGame')
+  const gameID = await fetch('http://localhost:3000/api/CreateGame')
+  return gameID
+}
+
+async function payPlayerWager(gameID) {
+  const response = await fetch('http://localhost:3000/api/PlayerWager', {body: {gameID: gameID, value: 1}});
   return response
 }
 
-function payPlayerWager() {
-  
-}
-
-function payNNWager() {
-
+async function payNNWager(gameID) {
+  const response = await fetch('http://localhost:3000/api/NNWager', {body: {gameID: gameID, value: 1}});
+  return response
 }
