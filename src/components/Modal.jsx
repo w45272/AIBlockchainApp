@@ -5,8 +5,6 @@ export default function Modal(props) {
   let modalRef;
   let label1Ref;
   let label2Ref;
-  
-
 
   createEffect(() => {
     modalRef.checked = props.modalState();
@@ -18,9 +16,8 @@ export default function Modal(props) {
       <div class="modal">
         <div class="modal__inner">
           <h2>Welcome!</h2>
-          <p><img src="https://i.imgur.com/HnrkBwB.gif" alt="" />
-            In order to play you must wager some ETH? Is this okay?
-          </p>
+          <img id='catgif' src="https://i.imgur.com/HnrkBwB.gif" alt=""/>
+          <p> In order to play you must wager some ETH? Is this okay?  </p>
           <button onClick = {() => {props.setModalState(!props.modalState())}}>I Wanna Play!</button>
         </div>
       </div>

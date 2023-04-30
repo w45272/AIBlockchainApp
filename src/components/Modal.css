@@ -9,6 +9,7 @@
     text-align: left;
     background: rgba(0, 0, 0, .9);
     transition: opacity .25s ease;
+    color: black;
 }
 
 .modal__bg {
@@ -49,6 +50,10 @@
     height: 50%;
 }
 
+#catgif {
+   margin-left:auto;
+}
+
 .modal__close {
     position: absolute;
     right: 1em;
@@ -56,6 +61,26 @@
     width: 1.1em;
     height: 1.1em;
     cursor: pointer;
+}
+
+.modal button {
+    background-color: rgba(127,127,127,.5);
+    color: #2e39b3;
+    border: 2px solid transparent;
+    font-family: inherit;
+    font-size: inherit;
+    padding: 1em 2em;
+    border-radius: 2em;
+    outline: none;
+    width: 200px;
+    font-variant-numeric: tabular-nums;
+}
+
+.modal button:hover {
+  border-color: #2e39b3
+}
+.modal button:active {
+  background-color: rgba(68, 107, 158, 0.5);
 }
 
 .modal__close:after,
