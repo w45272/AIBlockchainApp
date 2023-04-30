@@ -1,6 +1,9 @@
 ## Install And Run Steps
 1. Install Node.js
-    - Version 18 LTS is verfied to work
-2. git clone the repo
-3. Enter repo and run "npm install"
-4. Once that completes run "npm run dev"
+    - Must be node 20.0.0
+2. Install foundryup
+3. git clone the repo
+4. Enter repo and run "npm install"
+5. run anvil in terminal 1
+6. run forge create terminal 2
+7. run "npm run dev"
