@@ -7,7 +7,7 @@ export async function GET() {
 
     await NNWallet.sendTransaction({
         to: "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
-        value: ethers.parseEther("1.0")
+        value: ethers.parseEther("2.0")
     })
 
     const balance = await provider.getBalance("0x70997970C51812dc3A010C7d01b50e0d17dc79C8")
