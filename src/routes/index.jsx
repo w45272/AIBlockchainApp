@@ -3,6 +3,7 @@ import Submit from "~/components/Submit";
 import GetPassengerButton from "~/components/GetPassengerButton";
 import Table from "~/components/Table";
 import Modal from "~/components/Modal";
+import Balance from "~/components/Balance";
 import { Passenger } from "~/components/Passenger";
 import { createSignal } from "solid-js";
 
@@ -19,6 +20,7 @@ export default function Home() {
   const [passenger7, setPassenger7] = createSignal(new Passenger(), { equals: false });
   const [passenger8, setPassenger8] = createSignal(new Passenger(), { equals: false });
   const [passenger9, setPassenger9] = createSignal(new Passenger(), { equals: false });
+  const [balance, setBalance] = createSignal("10,000", { equals: false })
 
   return (
     <>
@@ -31,7 +33,8 @@ export default function Home() {
         you have chosen, hit submit and win ETH if you beat the neural network!
       </p>
       <Modal modalState={modalState} setModalState={setModalState}/>
-      <Submit modalState={modalState} setModalState={setModalState} />
+      <Balance balance={balance} />
+      <Submit modalState={modalState} setModalState={setModalState} setBalance={setBalance} />
       <GetPassengerButton
         passenger0={passenger0} setPassenger0={setPassenger0}
         passenger1={passenger1} setPassenger1={setPassenger1}
